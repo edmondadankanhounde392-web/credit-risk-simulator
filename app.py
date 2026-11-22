@@ -162,7 +162,7 @@ if result:
         st.write(f'- Taux annuel suggéré : **{result["suggested_rate_pct"]:.2f}%**')
     with b:
         parts = pd.DataFrame({"Critère": list(result["score_parts"].keys()), "Points": list(result["score_parts"].values())})
-        fig = px.bar(parts, x="Points", y="Critère", orientation="h", title="Décomposition du score")
+        fig = px.bar(parts, x="Points", y="Critère", orientation="h", title="Décomposition du score", template="plotly_dark")
         st.plotly_chart(fig, use_container_width=True)
 
     st.markdown("**Sensibilité de la perte attendue à la PD**")
@@ -171,7 +171,7 @@ if result:
         "PD": [f"{p:.1%}" for p in pds],
         "Perte attendue (FCFA)": [p * result["exposure_at_default"] * result["loss_given_default"] for p in pds],
     })
-    fig2 = px.line(sensitivity, x="PD", y="Perte attendue (FCFA)", markers=True, title="Sensibilité de l'EL à la probabilité de défaut")
+    fig2 = px.line(sensitivity, x="PD", y="Perte attendue (FCFA)", markers=True, title="Sensibilité de l'EL à la probabilité de défaut", template="plotly_dark")
     st.plotly_chart(fig2, use_container_width=True)
 
     export = {
