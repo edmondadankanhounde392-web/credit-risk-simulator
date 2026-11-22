@@ -89,11 +89,11 @@ def assess_credit(profile: BorrowerProfile, params: RiskParameters) -> dict:
     else:
         employment_score += 2
     collateral_ratio = profile.collateral_value / profile.loan_amount
-    collateral_score = 10 if collateral_ratio >= 1.5 else (
-        7 if collateral_ratio >= 1 else 3 if collateral_ratio >= 0.5 else 0
+    collateral_score = 15 if collateral_ratio >= 1.5 else (
+        10 if collateral_ratio >= 1 else 5 if collateral_ratio >= 0.5 else 0
     )
     down_ratio = profile.down_payment / (profile.loan_amount + profile.down_payment)
-    down_score = 5 if down_ratio >= 0.3 else 3 if down_ratio >= 0.15 else 0
+    down_score = 10 if down_ratio >= 0.3 else 5 if down_ratio >= 0.15 else 0
     age_score = 5 if 25 <= profile.age <= 60 else 3
     score_parts = {
         "Revenu et capacité de remboursement": income_score,
