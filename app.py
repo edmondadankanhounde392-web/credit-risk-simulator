@@ -16,61 +16,94 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* Identité visuelle bancaire : bleu nuit, bleu clair et accent turquoise */
+    /* Thème bancaire avec contraste renforcé */
     .stApp {
-        background: linear-gradient(135deg, #f4f7fb 0%, #eaf1f8 100%);
-        color: #183247;
+        background: #f3f6fa;
+        color: #172b3a;
     }
     [data-testid="stHeader"] {
-        background: rgba(244, 247, 251, 0.92);
+        background: #f3f6fa;
     }
-    [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #102a43 0%, #173f5f 100%);
-    }
-    [data-testid="stSidebar"] * {
-        color: #f4f8fc !important;
-    }
-    [data-testid="stSidebar"] [data-baseweb="slider"] [role="slider"] {
-        background-color: #36b7a5 !important;
+    /* Zone principale : textes foncés sur fond clair */
+    .main, .main p, .main label, .main [data-testid="stMarkdownContainer"] {
+        color: #172b3a;
     }
     h1, h2, h3 {
         color: #123653 !important;
         font-weight: 700 !important;
     }
+    /* Barre latérale bleu nuit */
+    [data-testid="stSidebar"] {
+        background: #102a43;
+    }
+    [data-testid="stSidebar"] h1,
+    [data-testid="stSidebar"] h2,
+    [data-testid="stSidebar"] h3,
+    [data-testid="stSidebar"] label,
+    [data-testid="stSidebar"] p,
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
+        color: #ffffff !important;
+    }
+    /* Les champs restent clairs avec du texte foncé, y compris dans la barre latérale */
+    [data-testid="stSidebar"] input,
+    [data-testid="stSidebar"] [data-baseweb="select"] > div,
+    [data-testid="stSidebar"] [data-baseweb="input"] > div,
+    [data-testid="stSidebar"] [data-baseweb="textarea"] > div {
+        background: #ffffff !important;
+        color: #172b3a !important;
+    }
+    [data-testid="stSidebar"] input {
+        -webkit-text-fill-color: #172b3a !important;
+    }
+    [data-testid="stSidebar"] [data-baseweb="select"] *,
+    [data-testid="stSidebar"] [data-baseweb="input"] * {
+        color: #172b3a !important;
+    }
+    [data-testid="stSidebar"] [data-baseweb="slider"] [role="slider"] {
+        background-color: #36b7a5 !important;
+    }
+    /* Champs de saisie principaux */
+    [data-testid="stNumberInput"] input,
+    [data-testid="stTextInput"] input,
+    [data-testid="stSelectbox"] [data-baseweb="select"] > div {
+        background: #ffffff !important;
+        color: #172b3a !important;
+        -webkit-text-fill-color: #172b3a !important;
+    }
     [data-testid="stMetric"] {
         background: #ffffff;
-        border: 1px solid #dce6ef;
+        border: 1px solid #d5e0ea;
         border-left: 4px solid #2b8cbe;
         border-radius: 12px;
         padding: 16px 18px;
-        box-shadow: 0 3px 12px rgba(16, 42, 67, 0.05);
+        box-shadow: 0 3px 12px rgba(16, 42, 67, 0.06);
     }
     [data-testid="stMetricLabel"] {
-        color: #52697d !important;
+        color: #40586d !important;
     }
     [data-testid="stMetricValue"] {
         color: #123653 !important;
     }
     div.stButton > button[kind="primary"] {
-        background: linear-gradient(90deg, #116466 0%, #178f88 100%);
-        color: white;
+        background: #116466;
+        color: #ffffff !important;
         border: 0;
         border-radius: 9px;
-        font-weight: 650;
+        font-weight: 700;
     }
     div.stButton > button[kind="primary"]:hover {
         background: #0d5557;
-        color: white;
-        border: 0;
+        color: #ffffff !important;
     }
     div[data-testid="stDownloadButton"] button {
+        background: #ffffff;
         border-radius: 9px;
-        border-color: #2b8cbe;
-        color: #155477;
+        border: 1px solid #2b8cbe;
+        color: #123653 !important;
     }
     [data-testid="stExpander"] {
-        background: rgba(255, 255, 255, 0.8);
-        border: 1px solid #dce6ef;
+        background: #ffffff;
+        border: 1px solid #d5e0ea;
         border-radius: 10px;
     }
     hr {
