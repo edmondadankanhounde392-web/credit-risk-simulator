@@ -13,6 +13,74 @@ st.set_page_config(
     layout="wide",
 )
 
+st.markdown(
+    """
+    <style>
+    /* Identité visuelle bancaire : bleu nuit, bleu clair et accent turquoise */
+    .stApp {
+        background: linear-gradient(135deg, #f4f7fb 0%, #eaf1f8 100%);
+        color: #183247;
+    }
+    [data-testid="stHeader"] {
+        background: rgba(244, 247, 251, 0.92);
+    }
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #102a43 0%, #173f5f 100%);
+    }
+    [data-testid="stSidebar"] * {
+        color: #f4f8fc !important;
+    }
+    [data-testid="stSidebar"] [data-baseweb="slider"] [role="slider"] {
+        background-color: #36b7a5 !important;
+    }
+    h1, h2, h3 {
+        color: #123653 !important;
+        font-weight: 700 !important;
+    }
+    [data-testid="stMetric"] {
+        background: #ffffff;
+        border: 1px solid #dce6ef;
+        border-left: 4px solid #2b8cbe;
+        border-radius: 12px;
+        padding: 16px 18px;
+        box-shadow: 0 3px 12px rgba(16, 42, 67, 0.05);
+    }
+    [data-testid="stMetricLabel"] {
+        color: #52697d !important;
+    }
+    [data-testid="stMetricValue"] {
+        color: #123653 !important;
+    }
+    div.stButton > button[kind="primary"] {
+        background: linear-gradient(90deg, #116466 0%, #178f88 100%);
+        color: white;
+        border: 0;
+        border-radius: 9px;
+        font-weight: 650;
+    }
+    div.stButton > button[kind="primary"]:hover {
+        background: #0d5557;
+        color: white;
+        border: 0;
+    }
+    div[data-testid="stDownloadButton"] button {
+        border-radius: 9px;
+        border-color: #2b8cbe;
+        color: #155477;
+    }
+    [data-testid="stExpander"] {
+        background: rgba(255, 255, 255, 0.8);
+        border: 1px solid #dce6ef;
+        border-radius: 10px;
+    }
+    hr {
+        border-color: #d5e0ea;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
+)
+
 st.title("📊 Simulateur de risque de crédit")
 st.caption(
     "Outil pédagogique d'aide à l'analyse d'un dossier de crédit. "
