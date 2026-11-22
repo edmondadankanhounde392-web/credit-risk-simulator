@@ -16,99 +16,55 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    /* Thème bancaire avec contraste renforcé */
-    .stApp {
-        background: #dcecf2;
-        color: #172b3a;
-    }
-    [data-testid="stHeader"] {
-        background: #dcecf2;
-    }
-    /* Zone principale : textes foncés sur fond clair */
-    .main, .main p, .main label, .main [data-testid="stMarkdownContainer"] {
-        color: #172b3a;
-    }
-    h1, h2, h3 {
-        color: #123653 !important;
-        font-weight: 700 !important;
-    }
-    /* Barre latérale bleu nuit */
-    [data-testid="stSidebar"] {
-        background: #102a43;
-    }
+    /* Thème sombre inspiré de la documentation Statsmodels */
+    .stApp { background: #15191f; color: #e5eaf0; }
+    [data-testid="stHeader"] { background: #202630; }
+    .main, .main p, .main label, .main [data-testid="stMarkdownContainer"] { color: #e5eaf0; }
+    h1, h2, h3 { color: #f1f5f9 !important; font-weight: 700 !important; }
+    [data-testid="stCaptionContainer"] { color: #aeb9c6 !important; }
+    [data-testid="stSidebar"] { background: #202630; border-right: 1px solid #354150; }
     [data-testid="stSidebar"] h1,
     [data-testid="stSidebar"] h2,
     [data-testid="stSidebar"] h3,
     [data-testid="stSidebar"] label,
     [data-testid="stSidebar"] p,
-    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] {
-        color: #ffffff !important;
-    }
-    /* Les champs restent clairs avec du texte foncé, y compris dans la barre latérale */
-    [data-testid="stSidebar"] input,
-    [data-testid="stSidebar"] [data-baseweb="select"] > div,
-    [data-testid="stSidebar"] [data-baseweb="input"] > div,
-    [data-testid="stSidebar"] [data-baseweb="textarea"] > div {
-        background: #eaf5f8 !important;
-        color: #102a43 !important;
-    }
-    [data-testid="stSidebar"] input {
-        -webkit-text-fill-color: #172b3a !important;
-    }
-    [data-testid="stSidebar"] [data-baseweb="select"] *,
-    [data-testid="stSidebar"] [data-baseweb="input"] * {
-        color: #172b3a !important;
-    }
-    [data-testid="stSidebar"] [data-baseweb="slider"] [role="slider"] {
-        background-color: #36b7a5 !important;
-    }
-    /* Champs de saisie principaux */
+    [data-testid="stSidebar"] [data-testid="stMarkdownContainer"] { color: #edf2f7 !important; }
     [data-testid="stNumberInput"] input,
     [data-testid="stTextInput"] input,
-    [data-testid="stSelectbox"] [data-baseweb="select"] > div {
-        background: #eaf5f8 !important;
-        color: #102a43 !important;
-        -webkit-text-fill-color: #172b3a !important;
+    [data-testid="stSidebar"] input,
+    [data-baseweb="select"] > div,
+    [data-baseweb="input"] > div {
+        background: #283341 !important;
+        color: #f1f5f9 !important;
+        -webkit-text-fill-color: #f1f5f9 !important;
+        border-color: #526273 !important;
     }
+    [data-baseweb="select"] *,
+    [data-baseweb="input"] * { color: #f1f5f9 !important; }
+    [data-testid="stSlider"] [data-baseweb="slider"] [role="slider"] { background: #38bdf8 !important; }
     [data-testid="stMetric"] {
-        background: #eaf5f8;
-        border: 1px solid #b7d2dd;
-        border-left: 4px solid #2b8cbe;
+        background: #222c38;
+        border: 1px solid #354454;
+        border-left: 4px solid #38bdf8;
         border-radius: 12px;
         padding: 16px 18px;
-        box-shadow: 0 3px 12px rgba(16, 42, 67, 0.06);
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
     }
-    [data-testid="stMetricLabel"] {
-        color: #40586d !important;
-    }
-    [data-testid="stMetricValue"] {
-        color: #123653 !important;
-    }
+    [data-testid="stMetricLabel"] { color: #b8c5d3 !important; }
+    [data-testid="stMetricValue"] { color: #f8fafc !important; }
     div.stButton > button[kind="primary"] {
-        background: #116466;
-        color: #ffffff !important;
-        border: 0;
-        border-radius: 9px;
-        font-weight: 700;
+        background: #087e8b; color: #ffffff !important;
+        border: 1px solid #20a4b5; border-radius: 9px; font-weight: 700;
     }
-    div.stButton > button[kind="primary"]:hover {
-        background: #0d5557;
-        color: #ffffff !important;
-    }
+    div.stButton > button[kind="primary"]:hover { background: #0b9aaa; color: #ffffff !important; }
     div[data-testid="stDownloadButton"] button {
-        background: #eaf5f8;
-        border-radius: 9px;
-        border: 1px solid #2b8cbe;
-        color: #123653 !important;
+        background: #283341; color: #e5eaf0 !important;
+        border: 1px solid #38bdf8; border-radius: 9px;
     }
-    [data-testid="stExpander"] {
-        background: #eaf5f8;
-        border: 1px solid #b7d2dd;
-        border-radius: 10px;
-    }
-    hr {
-        border-color: #d5e0ea;
-    }
+    a { color: #48c7d8 !important; }
+    [data-testid="stExpander"] { background: #202a35; border: 1px solid #3b4a5a; border-radius: 10px; }
+    [data-testid="stAlert"] { color: #f1f5f9; }
+    hr { border-color: #354150; }
     </style>
     """,
     unsafe_allow_html=True,
