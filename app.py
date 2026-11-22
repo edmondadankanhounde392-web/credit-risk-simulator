@@ -18,11 +18,11 @@ st.markdown(
     <style>
     /* Thème bancaire avec contraste renforcé */
     .stApp {
-        background: #f3f6fa;
+        background: #dcecf2;
         color: #172b3a;
     }
     [data-testid="stHeader"] {
-        background: #f3f6fa;
+        background: #dcecf2;
     }
     /* Zone principale : textes foncés sur fond clair */
     .main, .main p, .main label, .main [data-testid="stMarkdownContainer"] {
@@ -49,8 +49,8 @@ st.markdown(
     [data-testid="stSidebar"] [data-baseweb="select"] > div,
     [data-testid="stSidebar"] [data-baseweb="input"] > div,
     [data-testid="stSidebar"] [data-baseweb="textarea"] > div {
-        background: #ffffff !important;
-        color: #172b3a !important;
+        background: #eaf5f8 !important;
+        color: #102a43 !important;
     }
     [data-testid="stSidebar"] input {
         -webkit-text-fill-color: #172b3a !important;
@@ -66,13 +66,13 @@ st.markdown(
     [data-testid="stNumberInput"] input,
     [data-testid="stTextInput"] input,
     [data-testid="stSelectbox"] [data-baseweb="select"] > div {
-        background: #ffffff !important;
-        color: #172b3a !important;
+        background: #eaf5f8 !important;
+        color: #102a43 !important;
         -webkit-text-fill-color: #172b3a !important;
     }
     [data-testid="stMetric"] {
-        background: #ffffff;
-        border: 1px solid #d5e0ea;
+        background: #eaf5f8;
+        border: 1px solid #b7d2dd;
         border-left: 4px solid #2b8cbe;
         border-radius: 12px;
         padding: 16px 18px;
@@ -96,14 +96,14 @@ st.markdown(
         color: #ffffff !important;
     }
     div[data-testid="stDownloadButton"] button {
-        background: #ffffff;
+        background: #eaf5f8;
         border-radius: 9px;
         border: 1px solid #2b8cbe;
         color: #123653 !important;
     }
     [data-testid="stExpander"] {
-        background: #ffffff;
-        border: 1px solid #d5e0ea;
+        background: #eaf5f8;
+        border: 1px solid #b7d2dd;
         border-radius: 10px;
     }
     hr {
